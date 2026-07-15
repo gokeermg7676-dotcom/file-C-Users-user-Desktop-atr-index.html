@@ -97,6 +97,20 @@ var products = [
     sillage: "متوسط",
     category: "زنانه"
   },
+   {
+    id: "PR-107",
+    title: "Light Blue EDP Intense",
+    brand: "Dolce & Gabbana",
+    price: 4350000,
+    image: "https://images.unsplash.com/photo-1770301410072-f6ef6dad65b2?w=600&h=600&fit=crop&q=80",
+    description: "لایت بلو اینتنس یک عطر زنانه تازه و مدیترانه‌ای. با الهام از سواحل آفتابی ایتالیا.",
+    volume: "65ml",
+    fragranceNotes: "نت‌های سر: سیب سبز، لیمو، یخ | نت‌های میانی: یاسمن، گل رز | نت‌های پایه: چوب سدر، مشک، کهربا",
+    season: "بهار و تابستان",
+    longevity: "۶ تا ۸ ساعت",
+    sillage: "متوسط",
+    category: "زنانه"
+  },
   {
     id: "PR-108",
     title: "1 Million Parfum",
