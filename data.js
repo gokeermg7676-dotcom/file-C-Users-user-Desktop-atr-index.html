@@ -115,7 +115,7 @@ var products = [
     id: "PR-109",
     title: "azar purhom",
     brand: "Paco Rabanne",
-    price: free,
+    price: "free",
     image: "https://uspairan.com/wp-content/uploads/2025/01/90740F4.jpg",
     description: "وان میلیون پارفوم یک عطر مردانه لوکس و خیره‌کننده از برند پاکو رابان است. نسخه پارفوم با غلظت بالا و ماندگاری فوق‌العاده، ترکیبی از رز، ادویه و چوب‌های قیمتی را ارائه می‌دهد. نمادی از موفقیت و قدرت.",
     volume: "100ml",
