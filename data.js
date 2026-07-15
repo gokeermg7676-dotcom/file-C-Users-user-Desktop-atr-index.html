@@ -98,7 +98,7 @@ var products = [
     category: "زنانه"
   },
   {
-    id: "PR-108",
+    id: "PR-111",
     title: "1 Million Parfum",
     brand: "Paco Rabanne",
     price: 5650000,
@@ -111,19 +111,4 @@ var products = [
     sillage: "بسیار بالا",
     category: "مردانه"
   },
-  {
-    id: "PR-109",
-    title: "Azzaro Pour Homme",
-    brand: "Azzaro",
-    price: 0,
-    image: "https://uspairan.com/wp-content/uploads/2025/01/90740F4.jpg",
-    description: "آزارو پور هوم یک عطر کلاسیک مردانه با رایحه‌ای آروماتیک و چوبی است که حس وقار، اصالت و اعتمادبه‌نفس را منتقل می‌کند. این عطر انتخابی مناسب برای استفاده روزانه و موقعیت‌های رسمی است.",
-    volume: "100ml",
-    fragranceNotes: "نت‌های سر: اسطوخودوس، رازیانه، لیمو | نت‌های میانی: چوب صندل، سرو، خس‌خس | نت‌های پایه: مشک، عنبر، چرم",
-    season: "پاییز و زمستان",
-    longevity: "۸ تا ۱۰ ساعت",
-    sillage: "متوسط",
-    category: "مردانه",
-    isFree: true
-  }
 ];
