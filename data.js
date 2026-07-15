@@ -14,7 +14,7 @@ var products = [
     category: "مردانه"
   },
   {
-    id: "PR-102",
+    id: "abolfazlsalmani",
     title: "Sauvage Elixir",
     brand: "Dior",
     price: 6490000,
