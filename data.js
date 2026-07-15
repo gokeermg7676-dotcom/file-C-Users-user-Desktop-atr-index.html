@@ -1,6 +1,6 @@
 var products = [
   {
-    id: "PR-101",
+    id: "abolfazlsalmani",
     title: "Bleu de Chanel EDP",
     brand: "Chanel",
     price: 5890000,
@@ -14,10 +14,10 @@ var products = [
     category: "مردانه"
   },
   {
-    id: "abolfazlsalmani",
+    id: "PR-102",
     title: "Sauvage Elixir",
     brand: "Dior",
-    price: 6490000,
+    price: 6450000,
     image: "https://images.unsplash.com/photo-1774682060910-ba9a26f958ad?w=600&h=600&fit=crop&q=80",
     description: "سواواج الکسیر یک عطر مردانه فوق‌العاده جذاب و قدرتمند از برند دیور است. این عطر با غلظت بالا و ماندگاری استثنایی، ترکیبی از ادویه‌ها، چوب‌ها و عناصر تاریک را به نمایش می‌گذارد. انتخابی عالی برای مردان جسور و متفاوت.",
     volume: "60ml",
