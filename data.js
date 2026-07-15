@@ -97,7 +97,7 @@ var products = [
     sillage: "متوسط",
     category: "زنانه"
   },
-   {
+ {
     id: "PR-107",
     title: "Light Blue EDP Intense",
     brand: "Dolce & Gabbana",
@@ -112,7 +112,7 @@ var products = [
     category: "زنانه"
   },
   {
-    id: "PR-108",
+    id: "PR-111",
     title: "1 Million Parfum",
     brand: "Paco Rabanne",
     price: 5650000,

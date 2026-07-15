@@ -1,141 +1,163 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فروشگاه اینترنتی عطر اورجینال | سید حمید طباطبایی</title>
-  <meta name="description" content="فروشگاه اینترنتی عطر اورجینال - فروش عطرهای اصل و اورجینال با بهترین قیمت | سید حمید طباطبایی">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: { light: '#ffffff', dark: '#0f1117' },
+            base: { light: '#f8f9fb', dark: '#16181d' },
+            raised: { light: '#f1f3f5', dark: '#1e2025' },
+          }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
     * { font-family: 'Vazirmatn', sans-serif; }
     html { scroll-behavior: smooth; }
-    body { background-color: #0a0a0f; }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #111827; }
-    ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .float-animation { animation: float 3s ease-in-out infinite; }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
-    .hero-gradient { background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%); }
-    .gold-glow { box-shadow: 0 0 40px rgba(217, 119, 6, 0.15); }
-    .text-glow { text-shadow: 0 0 30px rgba(217, 119, 6, 0.3); }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    .dark ::-webkit-scrollbar-track { background: #1a1d23; }
+    ::-webkit-scrollbar-thumb { background: #d4a853; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #c49a46; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.5s ease-out forwards; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .float-anim { animation: float 4s ease-in-out infinite; }
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .dark .glass { background: rgba(15,17,23,0.8); }
+    .card-hover { transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+    .dark .card-hover:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+    .shimmer { background: linear-gradient(135deg, #fdf6e3 0%, #f5e6c8 50%, #fdf6e3 100%); background-size: 200% 200%; animation: shimmer 3s ease infinite; }
+    .dark .shimmer { background: linear-gradient(135deg, #2a2520 0%, #3d3428 50%, #2a2520 100%); background-size: 200% 200%; }
+    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+    .hero-bg { background: linear-gradient(160deg, #fefcf3 0%, #fdf6e3 30%, #f9edd4 60%, #fefcf3 100%); }
+    .dark .hero-bg { background: linear-gradient(160deg, #0f1117 0%, #1a1815 30%, #1f1c18 60%, #0f1117 100%); }
+    .modal-overlay { background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); }
+    .theme-toggle { transition: transform 0.3s ease; }
+    .theme-toggle:active { transform: scale(0.9); }
   </style>
 </head>
-<body class="text-white min-h-screen">
+<body class="bg-base-light dark:bg-base-dark text-gray-800 dark:text-gray-200 min-h-screen transition-colors duration-300">
 
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-xl border-b border-gray-800/50">
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200/60 dark:border-gray-700/60 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 md:h-20">
-        <!-- Logo -->
+      <div class="flex items-center justify-between h-16 md:h-18">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center">
-            <i class="fas fa-spray-can text-black text-lg"></i>
+          <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/20">
+            <i class="fas fa-spray-can text-white text-lg"></i>
           </div>
           <div>
-            <h1 class="text-white font-bold text-sm md:text-base leading-tight">عطر اورجینال</h1>
-            <p class="text-gray-500 text-xs hidden sm:block">فروشگاه عطر اصل</p>
+            <h1 class="text-gray-900 dark:text-white font-extrabold text-sm md:text-base leading-tight">عطر اورجینال</h1>
+            <p class="text-gray-400 dark:text-gray-500 text-[11px] hidden sm:block">فروشگاه عطر اصل</p>
           </div>
         </div>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="#" data-page="home" class="text-amber-400 font-medium text-sm transition-colors hover:text-amber-300">خانه</a>
-          <a href="#" data-page="about" class="text-gray-300 font-medium text-sm transition-colors hover:text-amber-300">درباره ما</a>
-          <a href="#" data-page="contact" class="text-gray-300 font-medium text-sm transition-colors hover:text-amber-300">تماس با ما</a>
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="#" data-page="home" class="text-amber-600 dark:text-amber-400 font-semibold text-sm px-4 py-2 rounded-lg bg-amber-50 dark:bg-amber-500/10 transition-all">خانه</a>
+          <a href="#" data-page="about" class="text-gray-500 dark:text-gray-400 font-medium text-sm px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-white transition-all">درباره ما</a>
+          <a href="#" data-page="contact" class="text-gray-500 dark:text-gray-400 font-medium text-sm px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-white transition-all">تماس با ما</a>
         </nav>
-
-        <!-- Phone -->
-        <div class="hidden md:flex items-center gap-2 text-gray-400 text-sm">
-          <i class="fas fa-phone-alt text-amber-500"></i>
-          <a href="tel:09058041001" class="hover:text-amber-400 transition-colors">09058041001</a>
+        <div class="hidden md:flex items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-all border border-gray-200 dark:border-gray-700" title="تغییر تم">
+            <i class="fas fa-moon text-gray-600 dark:text-amber-400 text-sm dark:hidden"></i>
+            <i class="fas fa-sun text-amber-500 text-sm hidden dark:inline"></i>
+          </button>
+          <a href="tel:09058041001" class="flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-gray-800 dark:hover:bg-gray-100 transition-all shadow-lg shadow-gray-900/10 dark:shadow-white/10">
+            <i class="fas fa-phone-alt text-amber-400 dark:text-amber-600 text-xs"></i>
+            09058041001
+          </a>
         </div>
-
-        <!-- Mobile Toggle -->
-        <button id="mobile-menu-toggle" class="md:hidden text-gray-300 hover:text-white">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
+        <div class="flex items-center gap-2 md:hidden">
+          <button id="theme-toggle-mobile" class="theme-toggle w-9 h-9 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center border border-gray-200 dark:border-gray-700">
+            <i class="fas fa-moon text-gray-600 dark:text-amber-400 text-xs dark:hidden"></i>
+            <i class="fas fa-sun text-amber-500 text-xs hidden dark:inline"></i>
+          </button>
+          <button id="mobile-menu-toggle" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white p-2">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
-      <div class="px-4 py-4 space-y-3">
-        <a href="#" data-page="home" class="block text-amber-400 font-medium py-2"><i class="fas fa-home ml-2"></i> خانه</a>
-        <a href="#" data-page="about" class="block text-gray-300 font-medium py-2"><i class="fas fa-info-circle ml-2"></i> درباره ما</a>
-        <a href="#" data-page="contact" class="block text-gray-300 font-medium py-2"><i class="fas fa-phone ml-2"></i> تماس با ما</a>
-        <a href="tel:09058041001" class="block bg-amber-500 text-black font-bold py-2 px-4 rounded-xl text-center mt-3"><i class="fas fa-phone-alt ml-2"></i> 09058041001</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-xl transition-colors">
+      <div class="px-4 py-4 space-y-1">
+        <a href="#" data-page="home" class="block text-amber-600 dark:text-amber-400 font-semibold py-3 px-4 rounded-lg bg-amber-50 dark:bg-amber-500/10"><i class="fas fa-home ml-2"></i> خانه</a>
+        <a href="#" data-page="about" class="block text-gray-600 dark:text-gray-400 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><i class="fas fa-info-circle ml-2"></i> درباره ما</a>
+        <a href="#" data-page="contact" class="block text-gray-600 dark:text-gray-400 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"><i class="fas fa-phone ml-2"></i> تماس با ما</a>
+        <a href="tel:09058041001" class="block bg-gray-900 dark:bg-white dark:text-gray-900 text-white font-bold py-3 px-4 rounded-xl text-center mt-2"><i class="fas fa-phone-alt ml-2"></i> 09058041001</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero-section" class="hero-gradient pt-20 md:pt-24 pb-16 md:pb-24 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute top-20 right-20 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 left-20 w-96 h-96 bg-amber-600 rounded-full blur-3xl"></div>
+  <!-- Hero -->
+  <section id="hero-section" class="hero-bg pt-24 md:pt-28 pb-16 md:pb-24 relative overflow-hidden transition-colors duration-300">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-20 -right-20 w-80 h-80 bg-amber-200/30 dark:bg-amber-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-amber-300/20 dark:bg-amber-600/5 rounded-full blur-3xl"></div>
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="fade-in-up">
-          <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
+        <div class="fade-up">
+          <div class="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 border border-amber-200 dark:border-amber-500/30 rounded-full px-4 py-2 mb-6 shadow-sm">
             <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
-            <span class="text-amber-400 text-sm">عطرهای اصل و اورجینال</span>
+            <span class="text-amber-700 dark:text-amber-400 text-sm font-medium">عطرهای اصل و اورجینال</span>
           </div>
-          <h2 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6 text-glow">
-            بویی <span class="text-amber-400">لوکس</span>،<br>انتخابی <span class="text-amber-400">منحصربه‌فرد</span>
+          <h2 class="text-4xl md:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-6">
+            بویی <span class="text-amber-600 dark:text-amber-400">لوکس</span>،<br>انتخابی <span class="text-amber-600 dark:text-amber-400">منحصربه‌فرد</span>
           </h2>
-          <p class="text-gray-400 text-lg leading-relaxed mb-8 max-w-lg">
-            مجموعه‌ای بی‌نظیر از عطرهای اورجینال برندهای معتبر جهان با ضمانت اصالت و بهترین قیمت. هر عطر، داستانی از هنر و زیبایی.
+          <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-8 max-w-lg">
+            مجموعه‌ای بی‌نظیر از عطرهای اورجینال برندهای معتبر جهان با ضمانت اصالت و بهترین قیمت.
           </p>
           <div class="flex flex-wrap gap-4">
-            <button onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-8 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30">
-              <i class="fas fa-shopping-bag ml-2"></i> مشاهده محصولات
+            <button onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})" class="bg-gray-900 dark:bg-white dark:text-gray-900 text-white font-bold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-gray-900/15 dark:shadow-white/10 hover:shadow-xl">
+              <i class="fas fa-shopping-bag ml-2 text-amber-400 dark:text-amber-600"></i> مشاهده محصولات
             </button>
-            <a href="tel:09058041001" class="border border-gray-700 hover:border-amber-500 text-gray-300 hover:text-amber-400 font-bold px-8 py-3 rounded-xl transition-all duration-300">
-              <i class="fas fa-phone-alt ml-2"></i> مشاوره رایگان
+            <a href="tel:09058041001" class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold px-8 py-3.5 rounded-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md">
+              <i class="fas fa-phone-alt ml-2 text-amber-500"></i> مشاوره رایگان
             </a>
           </div>
           <div class="flex items-center gap-8 mt-10">
             <div class="text-center">
-              <div class="text-2xl font-bold text-amber-400">۸+</div>
-              <div class="text-gray-500 text-sm">محصول متنوع</div>
+              <div class="text-2xl font-black text-gray-900 dark:text-white">۸+</div>
+              <div class="text-gray-400 dark:text-gray-500 text-xs">محصول متنوع</div>
             </div>
-            <div class="w-px h-10 bg-gray-800"></div>
+            <div class="w-px h-10 bg-gray-200 dark:bg-gray-700"></div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-amber-400">۱۰۰٪</div>
-              <div class="text-gray-500 text-sm">اصالت کالا</div>
+              <div class="text-2xl font-black text-gray-900 dark:text-white">۱۰۰٪</div>
+              <div class="text-gray-400 dark:text-gray-500 text-xs">اصالت کالا</div>
             </div>
-            <div class="w-px h-10 bg-gray-800"></div>
+            <div class="w-px h-10 bg-gray-200 dark:bg-gray-700"></div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-amber-400">۲۴ ساعته</div>
-              <div class="text-gray-500 text-sm">پشتیبانی</div>
+              <div class="text-2xl font-black text-gray-900 dark:text-white">۲۴/۷</div>
+              <div class="text-gray-400 dark:text-gray-500 text-xs">پشتیبانی</div>
             </div>
           </div>
         </div>
         <div class="hidden md:flex justify-center">
-          <div class="relative float-animation">
-            <div class="w-80 h-80 bg-gradient-to-br from-amber-500/20 to-amber-600/10 rounded-3xl flex items-center justify-center gold-glow">
-              <i class="fas fa-spray-can text-amber-500 text-9xl opacity-80"></i>
+          <div class="relative float-anim">
+            <div class="w-72 h-72 shimmer rounded-3xl flex items-center justify-center shadow-2xl shadow-amber-200/40 dark:shadow-amber-500/10 border border-amber-100 dark:border-amber-500/20">
+              <i class="fas fa-spray-can text-amber-500 dark:text-amber-400 text-8xl opacity-90"></i>
             </div>
-            <div class="absolute -top-4 -right-4 bg-gray-900 border border-gray-800 rounded-2xl p-4">
+            <div class="absolute -top-3 -right-3 bg-white dark:bg-gray-800 rounded-2xl p-3.5 shadow-xl border border-gray-100 dark:border-gray-700">
               <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
-                  <i class="fas fa-check text-green-500 text-sm"></i>
-                </div>
-                <span class="text-white text-sm font-medium">ضمانت اصالت</span>
+                <div class="w-8 h-8 bg-green-100 dark:bg-green-500/20 rounded-full flex items-center justify-center"><i class="fas fa-check text-green-600 dark:text-green-400 text-xs"></i></div>
+                <span class="text-gray-800 dark:text-gray-200 text-xs font-bold">ضمانت اصالت</span>
               </div>
             </div>
-            <div class="absolute -bottom-4 -left-4 bg-gray-900 border border-gray-800 rounded-2xl p-4">
+            <div class="absolute -bottom-3 -left-3 bg-white dark:bg-gray-800 rounded-2xl p-3.5 shadow-xl border border-gray-100 dark:border-gray-700">
               <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-amber-500/20 rounded-full flex items-center justify-center">
-                  <i class="fas fa-star text-amber-500 text-sm"></i>
-                </div>
-                <span class="text-white text-sm font-medium">کیفیت تضمینی</span>
+                <div class="w-8 h-8 bg-amber-100 dark:bg-amber-500/20 rounded-full flex items-center justify-center"><i class="fas fa-star text-amber-500 text-xs"></i></div>
+                <span class="text-gray-800 dark:text-gray-200 text-xs font-bold">کیفیت تضمینی</span>
               </div>
             </div>
           </div>
@@ -145,210 +167,175 @@
   </section>
 
   <!-- Home Content -->
-  <div data-section="home" class="min-h-screen">
-    <!-- Products Section -->
-    <section id="products-section" class="py-16 md:py-24">
+  <div data-section="home">
+    <section id="products-section" class="py-16 md:py-24 bg-white dark:bg-surface-dark transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
         <div class="text-center mb-12">
-          <h3 class="text-3xl md:text-4xl font-black text-white mb-4">محصولات ما</h3>
-          <p class="text-gray-400 max-w-2xl mx-auto">مجموعه‌ای متنوع از عطرهای اورجینال برندهای معتبر جهان</p>
+          <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">محصولات ما</h3>
+          <p class="text-gray-400 dark:text-gray-500 max-w-xl mx-auto">مجموعه‌ای متنوع از عطرهای اورجینال برندهای معتبر جهان</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-500 mx-auto rounded-full mt-4"></div>
         </div>
-
-        <!-- Search & Filter -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
           <div class="relative w-full sm:w-80">
-            <input type="text" id="search-input" placeholder="جستجوی عطر..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-5 py-3 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors">
-            <i class="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+            <input type="text" id="search-input" placeholder="جستجوی عطر..." class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-5 py-3 pr-12 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-400 dark:focus:border-amber-500 transition-all">
+            <i class="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 dark:text-gray-600"></i>
           </div>
           <div class="flex gap-2 flex-wrap justify-center">
-            <button data-filter="all" class="bg-amber-500 text-black font-bold px-5 py-2 rounded-xl text-sm transition-all duration-300">همه</button>
-            <button data-filter="مردانه" class="bg-gray-800 text-gray-300 font-medium px-5 py-2 rounded-xl text-sm transition-all duration-300 hover:bg-gray-700">مردانه</button>
-            <button data-filter="زنانه" class="bg-gray-800 text-gray-300 font-medium px-5 py-2 rounded-xl text-sm transition-all duration-300 hover:bg-gray-700">زنانه</button>
-            <button data-filter="یونیسکس" class="bg-gray-800 text-gray-300 font-medium px-5 py-2 rounded-xl text-sm transition-all duration-300 hover:bg-gray-700">یونیسکس</button>
+            <button data-filter="all" class="bg-gray-900 dark:bg-amber-500 text-white dark:text-gray-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-all shadow-md">همه</button>
+            <button data-filter="مردانه" class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-medium px-5 py-2.5 rounded-xl text-sm transition-all hover:bg-gray-200 dark:hover:bg-gray-700">مردانه</button>
+            <button data-filter="زنانه" class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-medium px-5 py-2.5 rounded-xl text-sm transition-all hover:bg-gray-200 dark:hover:bg-gray-700">زنانه</button>
+            <button data-filter="یونیسکس" class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-medium px-5 py-2.5 rounded-xl text-sm transition-all hover:bg-gray-200 dark:hover:bg-gray-700">یونیسکس</button>
           </div>
         </div>
-
-        <!-- Products Grid -->
         <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="py-16 border-t border-gray-800/50">
+    <section class="py-16 bg-base-light dark:bg-base-dark border-t border-gray-100 dark:border-gray-800 transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 text-center hover:border-amber-500/30 transition-all duration-500">
-            <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <i class="fas fa-shield-alt text-amber-500 text-2xl"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl p-8 text-center card-hover">
+            <div class="w-14 h-14 bg-amber-50 dark:bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-amber-100 dark:border-amber-500/20">
+              <i class="fas fa-shield-alt text-amber-500 text-xl"></i>
             </div>
-            <h4 class="text-white font-bold text-lg mb-3">ضمانت اصالت</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">تمامی محصولات با ضمانت اصالت و کیفیت ارائه می‌شوند</p>
+            <h4 class="text-gray-900 dark:text-white font-bold text-lg mb-2">ضمانت اصالت</h4>
+            <p class="text-gray-400 dark:text-gray-500 text-sm">تمامی محصولات با ضمانت اصالت و کیفیت ارائه می‌شوند</p>
           </div>
-          <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 text-center hover:border-amber-500/30 transition-all duration-500">
-            <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <i class="fas fa-truck text-amber-500 text-2xl"></i>
+          <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl p-8 text-center card-hover">
+            <div class="w-14 h-14 bg-amber-50 dark:bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-amber-100 dark:border-amber-500/20">
+              <i class="fas fa-truck text-amber-500 text-xl"></i>
             </div>
-            <h4 class="text-white font-bold text-lg mb-3">ارسال سریع</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">ارسال به سراسر کشور در کوتاه‌ترین زمان ممکن</p>
+            <h4 class="text-gray-900 dark:text-white font-bold text-lg mb-2">ارسال سریع</h4>
+            <p class="text-gray-400 dark:text-gray-500 text-sm">ارسال به سراسر کشور در کوتاه‌ترین زمان ممکن</p>
           </div>
-          <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 text-center hover:border-amber-500/30 transition-all duration-500">
-            <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <i class="fas fa-headset text-amber-500 text-2xl"></i>
+          <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl p-8 text-center card-hover">
+            <div class="w-14 h-14 bg-amber-50 dark:bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-amber-100 dark:border-amber-500/20">
+              <i class="fas fa-headset text-amber-500 text-xl"></i>
             </div>
-            <h4 class="text-white font-bold text-lg mb-3">پشتیبانی ۲۴ ساعته</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">مشاوره و پشتیبانی در تمام ساعات شبانه‌روز</p>
+            <h4 class="text-gray-900 dark:text-white font-bold text-lg mb-2">پشتیبانی ۲۴ ساعته</h4>
+            <p class="text-gray-400 dark:text-gray-500 text-sm">مشاوره و پشتیبانی در تمام ساعات شبانه‌روز</p>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- About Section -->
-  <section data-section="about" class="hidden pt-24 pb-16 min-h-screen">
+  <!-- About -->
+  <section data-section="about" class="hidden pt-24 pb-16 bg-base-light dark:bg-base-dark min-h-screen transition-colors duration-300">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h3 class="text-3xl md:text-4xl font-black text-white mb-4">درباره ما</h3>
-        <div class="w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
+        <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">درباره ما</h3>
+        <div class="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-500 mx-auto rounded-full"></div>
       </div>
-
-      <div class="bg-gray-900 border border-gray-800 rounded-3xl p-8 md:p-12">
+      <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl p-8 md:p-12 shadow-sm transition-colors">
         <div class="flex items-center gap-4 mb-8">
-          <div class="w-20 h-20 bg-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-            <i class="fas fa-user-tie text-black text-3xl"></i>
+          <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/20">
+            <i class="fas fa-user-tie text-white text-3xl"></i>
           </div>
           <div>
-            <h4 class="text-white font-bold text-xl">سید حمید طباطبایی</h4>
-            <p class="text-amber-400 text-sm">مدیریت فروشگاه عطر اورجینال</p>
+            <h4 class="text-gray-900 dark:text-white font-bold text-xl">سید حمید طباطبایی</h4>
+            <p class="text-amber-600 dark:text-amber-400 text-sm font-medium">مدیریت فروشگاه عطر اورجینال</p>
           </div>
         </div>
-
-        <div class="space-y-6 text-gray-300 leading-relaxed">
-          <p>
-            فروشگاه اینترنتی عطر اورجینال با هدف ارائه بهترین و باکیفیت‌ترین عطرهای اصل و اورجینال برندهای معتبر جهان تأسیس شده است. ما با سال‌ها تجربه در زمینه عطر و ادکلن، مجموعه‌ای بی‌نظیر از عطرهای مردانه، زنانه و یونیسکس را گردآوری کرده‌ایم.
-          </p>
-          <p>
-            تیم ما متعهد به ارائه محصولات با ضمانت اصالت و بهترین قیمت است. هر عطری که در فروشگاه ما عرضه می‌شود، مستقیماً از توزیع‌کنندگان رسمی برندها تهیه شده و کیفیت آن تضمین شده است.
-          </p>
-          <p>
-            ما باور داریم که عطر بخشی از هویت و شخصیت هر فرد است. به همین دلیل، تیم مشاوره ما آماده است تا در انتخاب عطر مناسب با سلیقه و نیاز شما کمک کند. فروشگاه ما در تهران، خیابان هفده شهریور، خیابان رضایی، خیابان ابراهیمی (ارج) واقع شده و همواره پذیرای مشتریان گرامی است.
-          </p>
-          <p>
-            هدف ما ایجاد تجربه‌ای لذت‌بخش و متفاوت از خرید عطر آنلاین است. با ما همراه باشید تا عطری را پیدا کنید که داستان شما را روایت کند.
-          </p>
+        <div class="space-y-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>فروشگاه اینترنتی عطر اورجینال با هدف ارائه بهترین و باکیفیت‌ترین عطرهای اصل و اورجینال برندهای معتبر جهان تأسیس شده است.</p>
+          <p>تیم ما متعهد به ارائه محصولات با ضمانت اصالت و بهترین قیمت است. هر عطری که در فروشگاه ما عرضه می‌شود، مستقیماً از توزیع‌کنندگان رسمی برندها تهیه شده است.</p>
+          <p>ما باور داریم که عطر بخشی از هویت و شخصیت هر فرد است. فروشگاه ما در تهران، خیابان هفده شهریور، خیابان رضایی، خیابان ابراهیمی (ارج) واقع شده است.</p>
         </div>
-
         <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-gray-800/50 rounded-xl p-5 text-center">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 text-center border border-gray-100 dark:border-gray-700/50">
             <i class="fas fa-award text-amber-500 text-2xl mb-3"></i>
-            <h5 class="text-white font-bold mb-1">تجربه بالا</h5>
-            <p class="text-gray-400 text-sm">سال‌ها تجربه در صنعت عطر</p>
+            <h5 class="text-gray-900 dark:text-white font-bold mb-1">تجربه بالا</h5>
+            <p class="text-gray-400 dark:text-gray-500 text-sm">سال‌ها تجربه در صنعت عطر</p>
           </div>
-          <div class="bg-gray-800/50 rounded-xl p-5 text-center">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 text-center border border-gray-100 dark:border-gray-700/50">
             <i class="fas fa-certificate text-amber-500 text-2xl mb-3"></i>
-            <h5 class="text-white font-bold mb-1">ضمانت اصالت</h5>
-            <p class="text-gray-400 text-sm">تمام محصولات اصل و اورجینال</p>
+            <h5 class="text-gray-900 dark:text-white font-bold mb-1">ضمانت اصالت</h5>
+            <p class="text-gray-400 dark:text-gray-500 text-sm">تمام محصولات اصل و اورجینال</p>
           </div>
-          <div class="bg-gray-800/50 rounded-xl p-5 text-center">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 text-center border border-gray-100 dark:border-gray-700/50">
             <i class="fas fa-heart text-amber-500 text-2xl mb-3"></i>
-            <h5 class="text-white font-bold mb-1">رضایت مشتری</h5>
-            <p class="text-gray-400 text-sm">اولویت ما رضایت شماست</p>
+            <h5 class="text-gray-900 dark:text-white font-bold mb-1">رضایت مشتری</h5>
+            <p class="text-gray-400 dark:text-gray-500 text-sm">اولویت ما رضایت شماست</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section data-section="contact" class="hidden pt-24 pb-16 min-h-screen">
+  <!-- Contact -->
+  <section data-section="contact" class="hidden pt-24 pb-16 bg-base-light dark:bg-base-dark min-h-screen transition-colors duration-300">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h3 class="text-3xl md:text-4xl font-black text-white mb-4">تماس با ما</h3>
-        <div class="w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
+        <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">تماس با ما</h3>
+        <div class="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-500 mx-auto rounded-full"></div>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Contact Info -->
-        <div class="bg-gray-900 border border-gray-800 rounded-3xl p-8">
-          <h4 class="text-white font-bold text-xl mb-8">اطلاعات تماس</h4>
-          <div class="space-y-6">
+        <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl p-8 shadow-sm transition-colors">
+          <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-8">اطلاعات تماس</h4>
+          <div class="space-y-5">
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div class="w-11 h-11 bg-amber-50 dark:bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-amber-100 dark:border-amber-500/20">
                 <i class="fas fa-map-marker-alt text-amber-500"></i>
               </div>
               <div>
-                <h5 class="text-white font-bold mb-1">آدرس</h5>
-                <p class="text-gray-400 text-sm leading-relaxed">تهران، خیابان هفده شهریور، خیابان رضایی، خیابان ابراهیمی (ارج)</p>
+                <h5 class="text-gray-900 dark:text-white font-bold text-sm mb-1">آدرس</h5>
+                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">تهران، خیابان هفده شهریور، خیابان رضایی، خیابان ابراهیمی (ارج)</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div class="w-11 h-11 bg-amber-50 dark:bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-amber-100 dark:border-amber-500/20">
                 <i class="fas fa-phone-alt text-amber-500"></i>
               </div>
               <div>
-                <h5 class="text-white font-bold mb-1">شماره تماس</h5>
-                <a href="tel:09058041001" class="text-gray-400 text-sm hover:text-amber-400 transition-colors">09058041001</a>
+                <h5 class="text-gray-900 dark:text-white font-bold text-sm mb-1">شماره تماس</h5>
+                <a href="tel:09058041001" class="text-gray-500 dark:text-gray-400 text-sm hover:text-amber-600 dark:hover:text-amber-400 transition-colors">09058041001</a>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div class="w-11 h-11 bg-amber-50 dark:bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-amber-100 dark:border-amber-500/20">
                 <i class="fas fa-user text-amber-500"></i>
               </div>
               <div>
-                <h5 class="text-white font-bold mb-1">مسئول فروشگاه</h5>
-                <p class="text-gray-400 text-sm">سید حمید طباطبایی</p>
+                <h5 class="text-gray-900 dark:text-white font-bold text-sm mb-1">مسئول فروشگاه</h5>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">سید حمید طباطبایی</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div class="w-11 h-11 bg-amber-50 dark:bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-amber-100 dark:border-amber-500/20">
                 <i class="fas fa-clock text-amber-500"></i>
               </div>
               <div>
-                <h5 class="text-white font-bold mb-1">ساعات کاری</h5>
-                <p class="text-gray-400 text-sm">شنبه تا پنجشنبه: ۱۰ صبح تا ۱۰ شب</p>
-                <p class="text-gray-400 text-sm">جمعه: تعطیل</p>
+                <h5 class="text-gray-900 dark:text-white font-bold text-sm mb-1">ساعات کاری</h5>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">شنبه تا پنجشنبه: ۱۰ صبح تا ۱۰ شب</p>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">جمعه: تعطیل</p>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Contact Actions -->
         <div class="space-y-6">
-          <div class="bg-gray-900 border border-gray-800 rounded-3xl p-8">
-            <h4 class="text-white font-bold text-xl mb-6">ارتباط سریع</h4>
-            <div class="space-y-4">
-              <a href="tel:09058041001" class="flex items-center gap-4 bg-green-600 hover:bg-green-500 text-white font-bold p-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30">
-                <i class="fas fa-phone-alt text-xl"></i>
-                <div>
-                  <div class="text-sm">تماس تلفنی</div>
-                  <div class="text-xs opacity-80">09058041001</div>
-                </div>
+          <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl p-8 shadow-sm transition-colors">
+            <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-6">ارتباط سریع</h4>
+            <div class="space-y-3">
+              <a href="tel:09058041001" class="flex items-center gap-4 bg-green-600 hover:bg-green-500 text-white font-bold p-4 rounded-xl transition-all shadow-md shadow-green-600/15">
+                <i class="fas fa-phone-alt text-lg"></i>
+                <div><div class="text-sm">تماس تلفنی</div><div class="text-xs opacity-80">09058041001</div></div>
               </a>
-              <a href="https://wa.me/989058041001" target="_blank" class="flex items-center gap-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold p-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30">
-                <i class="fab fa-whatsapp text-xl"></i>
-                <div>
-                  <div class="text-sm">واتساپ</div>
-                  <div class="text-xs opacity-80">ارسال پیام مستقیم</div>
-                </div>
+              <a href="https://wa.me/989058041001" target="_blank" class="flex items-center gap-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold p-4 rounded-xl transition-all shadow-md shadow-emerald-600/15">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <div><div class="text-sm">واتساپ</div><div class="text-xs opacity-80">ارسال پیام مستقیم</div></div>
               </a>
-              <a href="https://t.me/989058041001" target="_blank" class="flex items-center gap-4 bg-blue-600 hover:bg-blue-500 text-white font-bold p-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
-                <i class="fab fa-telegram-plane text-xl"></i>
-                <div>
-                  <div class="text-sm">تلگرام</div>
-                  <div class="text-xs opacity-80">ارسال پیام مستقیم</div>
-                </div>
+              <a href="https://t.me/989058041001" target="_blank" class="flex items-center gap-4 bg-sky-600 hover:bg-sky-500 text-white font-bold p-4 rounded-xl transition-all shadow-md shadow-sky-600/15">
+                <i class="fab fa-telegram-plane text-lg"></i>
+                <div><div class="text-sm">تلگرام</div><div class="text-xs opacity-80">ارسال پیام مستقیم</div></div>
               </a>
             </div>
           </div>
-
-          <div class="bg-gray-900 border border-gray-800 rounded-3xl p-8">
-            <h4 class="text-white font-bold text-xl mb-4">پیام سریع</h4>
-            <p class="text-gray-400 text-sm mb-4">برای دریافت مشاوره رایگان و اطلاعات بیشتر، با ما تماس بگیرید.</p>
-            <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4">
-              <p class="text-gray-300 text-sm leading-relaxed">
-                <i class="fas fa-info-circle text-amber-500 ml-1"></i>
-                مشاوره انتخاب عطر بر اساس سلیقه، بودجه و نیاز شما کاملاً رایگان است.
-              </p>
+          <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl p-8 shadow-sm transition-colors">
+            <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">پیام سریع</h4>
+            <p class="text-gray-400 dark:text-gray-500 text-sm mb-4">برای دریافت مشاوره رایگان و اطلاعات بیشتر، با ما تماس بگیرید.</p>
+            <div class="bg-amber-50 dark:bg-amber-500/10 border border-amber-100 dark:border-amber-500/20 rounded-xl p-4">
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"><i class="fas fa-info-circle text-amber-500 ml-1"></i> مشاوره انتخاب عطر بر اساس سلیقه، بودجه و نیاز شما کاملاً رایگان است.</p>
             </div>
           </div>
         </div>
@@ -357,20 +344,18 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-950 border-t border-gray-800/50 py-12 mt-16">
+  <footer class="bg-gray-900 dark:bg-gray-950 text-white py-12 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center">
-              <i class="fas fa-spray-can text-black"></i>
-            </div>
-            <h4 class="text-white font-bold">عطر اورجینال</h4>
+            <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center"><i class="fas fa-spray-can text-white"></i></div>
+            <h4 class="font-bold">عطر اورجینال</h4>
           </div>
           <p class="text-gray-400 text-sm leading-relaxed">فروشگاه اینترنتی عطر اورجینال - ارائه‌دهنده بهترین عطرهای اصل و اورجینال برندهای معتبر جهان.</p>
         </div>
         <div>
-          <h4 class="text-white font-bold mb-4">دسترسی سریع</h4>
+          <h4 class="font-bold mb-4">دسترسی سریع</h4>
           <div class="space-y-2">
             <a href="#" data-page="home" class="block text-gray-400 text-sm hover:text-amber-400 transition-colors">خانه</a>
             <a href="#" data-page="about" class="block text-gray-400 text-sm hover:text-amber-400 transition-colors">درباره ما</a>
@@ -378,7 +363,7 @@
           </div>
         </div>
         <div>
-          <h4 class="text-white font-bold mb-4">اطلاعات تماس</h4>
+          <h4 class="font-bold mb-4">اطلاعات تماس</h4>
           <div class="space-y-2 text-gray-400 text-sm">
             <p><i class="fas fa-phone-alt text-amber-500 ml-2"></i> 09058041001</p>
             <p><i class="fas fa-user text-amber-500 ml-2"></i> سید حمید طباطبایی</p>
@@ -393,16 +378,24 @@
   </footer>
 
   <!-- Detail Modal -->
-  <div id="detail-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm items-center justify-center p-4" onclick="if(event.target===this)closeDetailModal()">
-    <div id="detail-modal-content" class="bg-gray-900 rounded-3xl max-w-4xl w-full overflow-hidden border border-gray-800 max-h-[90vh]"></div>
+  <div id="detail-modal" class="hidden fixed inset-0 z-[100] modal-overlay items-center justify-center p-4" onclick="if(event.target===this)closeDetailModal()">
+    <div id="detail-modal-content" class="bg-white dark:bg-gray-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl max-h-[90vh] transition-colors"></div>
   </div>
 
   <!-- Buy Modal -->
-  <div id="buy-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm items-center justify-center p-4" onclick="if(event.target===this)closeBuyModal()">
+  <div id="buy-modal" class="hidden fixed inset-0 z-[100] modal-overlay items-center justify-center p-4" onclick="if(event.target===this)closeBuyModal()">
     <div id="buy-modal-content"></div>
   </div>
 
   <script src="data.js"></script>
   <script src="main.js"></script>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </body>
 </html>
